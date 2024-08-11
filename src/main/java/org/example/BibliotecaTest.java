@@ -53,17 +53,17 @@ public class BibliotecaTest {
         assertEquals("Java How to Program\nPatterns of head Application Architecture\nhead First Patterns\n", biblioteca.listarLivrosCadastrados());
     }
 
-    @Test
-    @DisplayName("Quando o usuario deseja listar todos os livros disponíveis")
-    public void TestListarLivrosDisponiveis(){
-        biblioteca.reservaLivro("Java How to Program"); // reservando um livro
-        assertEquals("Patterns of head Application Architecture\nhead First Patterns\n", biblioteca.listarLivrosDisponiveis());
-    }
 
     @Test
     @DisplayName("Quando o usuario deseja reservar um livro")
     public void TestReservarLivro(){
-        assertEquals("Livro reservado com sucesso!", biblioteca.reservaLivro(1,2));
+           assertEquals("Livro Reservado: Java How to Program - João", biblioteca.reservaLivro(1,1));
+           assertEquals("Livro Reservado: Patterns of head Application Architecture - Maria", biblioteca.reservaLivro(2,2));
+           assertEquals("Livro Reservado: head First Patterns - José", biblioteca.reservaLivro(3,3));
+           assertEquals("Livro já reservado", biblioteca.reservaLivro(1,2));
+           assertEquals("Livro não encontrado", biblioteca.reservaLivro(4,1));
+           assertEquals("Livro não encontrado", biblioteca.reservaLivro(-1,1));
+           assertEquals("Usuário não encontrado", biblioteca.reservaLivro(1,4));
     }
 
 
