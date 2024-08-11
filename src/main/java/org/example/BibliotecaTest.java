@@ -56,7 +56,14 @@ public class BibliotecaTest {
     @Test
     @DisplayName("Quando o usuario deseja listar todos os livros disponíveis")
     public void TestListarLivrosDisponiveis(){
+        biblioteca.reservaLivro("Java How to Program"); // reservando um livro
         assertEquals("Patterns of head Application Architecture\nhead First Patterns\n", biblioteca.listarLivrosDisponiveis());
+    }
+
+    @Test
+    @DisplayName("Quando o usuario deseja reservar um livro")
+    public void TestReservarLivro(){
+        assertEquals("Livro reservado com sucesso!", biblioteca.reservaLivro(1,2));
     }
 
 
