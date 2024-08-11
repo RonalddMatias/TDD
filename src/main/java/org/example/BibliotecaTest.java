@@ -11,6 +11,10 @@ public class BibliotecaTest {
     Livro livro2;
     Livro livro3;
 
+    Usuario usuario1;
+    Usuario usuario2;
+    Usuario usuario3;
+
     @BeforeEach
     public void setUp() {
         biblioteca = new Biblioteca();
@@ -22,5 +26,9 @@ public class BibliotecaTest {
         biblioteca.addLivro(livro1);
         biblioteca.addLivro(livro2);
         biblioteca.addLivro(livro3);
+
+        biblioteca.addUsuario(usuario1);
+        biblioteca.addUsuario(usuario2);
+        biblioteca.addUsuario(usuario3);
     }
 }
