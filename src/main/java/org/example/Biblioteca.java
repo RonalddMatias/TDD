@@ -33,5 +33,13 @@ public class Biblioteca {
     }
 
 
+    public String listarLivros() {
+        String retorno = "";
+
+        for (Livro l: livros){
+            retorno += l.getTitulo() + "\n";
+        }
+        return retorno;
+    }
 }
 

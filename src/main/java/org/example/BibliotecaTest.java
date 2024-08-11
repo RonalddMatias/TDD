@@ -48,10 +48,12 @@ public class BibliotecaTest {
     }
 
     @Test
-    @DisplayName("Quando o usuario deseja listar todos os livros disponíveis")
+    @DisplayName("Quando o usuario deseja listar todos os livros cadastrados")
     public void TestListarLivros(){
         assertEquals("Java How to Program\nPatterns of head Application Architecture\nhead First Patterns\n", biblioteca.listarLivros());
     }
+
+
 
 
 }
