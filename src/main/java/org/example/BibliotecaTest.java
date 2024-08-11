@@ -1,6 +1,7 @@
 package org.example;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 
@@ -11,9 +12,7 @@ public class BibliotecaTest {
     Livro livro2;
     Livro livro3;
 
-    Usuario usuario1;
-    Usuario usuario2;
-    Usuario usuario3;
+
 
     @BeforeEach
     public void setUp() {
@@ -27,8 +26,16 @@ public class BibliotecaTest {
         biblioteca.addLivro(livro2);
         biblioteca.addLivro(livro3);
 
-        biblioteca.addUsuario(usuario1);
-        biblioteca.addUsuario(usuario2);
-        biblioteca.addUsuario(usuario3);
+        biblioteca.addUsuario("João");
+        biblioteca.addUsuario("Maria");
+        biblioteca.addUsuario("José");
     }
+
+    @Test
+    @DisplayName("Quando um Usuário quer buscar um livro")
+    public void buscarLivro(){
+        AssertEquals("Java How to Program", biblioteca.buscarLivro("Java How to Program"));
+    }
+
+
 }

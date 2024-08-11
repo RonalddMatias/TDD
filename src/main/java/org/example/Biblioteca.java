@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Biblioteca {
     private List<Livro> livros;
-    private List<Usuario> usuarios;
+    private List<String> usuarios;
 
     public Biblioteca() {
         this.livros = new ArrayList<>();
@@ -15,7 +15,7 @@ public class Biblioteca {
         this.livros.add(livro);
     }
 
-    public void addUsuario(Usuario usuario){
+    public void addUsuario(String usuario){
         this.usuarios.add(usuario);
     }
 
