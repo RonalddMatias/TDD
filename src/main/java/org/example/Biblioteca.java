@@ -63,5 +63,15 @@ public class Biblioteca {
 
         return "Livro Reservado: " + livro. getTitulo() + " - " + usuario;
     }
+
+    public String listarLivrosDisponiveis() {
+        String retorno = "";
+        for(Livro l : livros){
+            if(!reservas.containsKey(l)){
+                retorno += l.getTitulo() + "\n";
+            }
+        }
+        return  retorno;
+    }
 }
 

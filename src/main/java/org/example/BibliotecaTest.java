@@ -53,6 +53,12 @@ public class BibliotecaTest {
         assertEquals("Java How to Program\nPatterns of head Application Architecture\nhead First Patterns\n", biblioteca.listarLivrosCadastrados());
     }
 
+    @Test
+    @DisplayName("Quando o usuario deseja listar todos os livros disponíveis")
+    public void testarListarLivrosDisponiveis(){
+        biblioteca.reservaLivro(1,1);
+        assertEquals("Patterns of head Application Architecture\nhead First Patterns\n", biblioteca.listarLivrosDisponiveis());
+    }
 
     @Test
     @DisplayName("Quando o usuario deseja reservar um livro")
