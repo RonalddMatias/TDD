@@ -33,7 +33,7 @@ public class Biblioteca {
     }
 
 
-    public String listarLivros() {
+    public String listarLivrosCadastrados() {
         String retorno = "";
 
         for (Livro l: livros){
