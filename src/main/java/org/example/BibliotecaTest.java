@@ -47,5 +47,11 @@ public class BibliotecaTest {
         assertEquals(livros2, new ArrayList<Livro>(List.of(livro2, livro3)));
     }
 
+    @Test
+    @DisplayName("Quando o usuario deseja listar todos os livros disponíveis")
+    public void TestListarLivros(){
+        assertEquals("Java How to Program\nPatterns of head Application Architecture\nhead First Patterns\n", biblioteca.listarLivros());
+    }
+
 
 }
