@@ -4,6 +4,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class BibliotecaTest {
     Biblioteca biblioteca;
@@ -19,8 +25,8 @@ public class BibliotecaTest {
         biblioteca = new Biblioteca();
 
         livro1 = new Livro("Java How to Program");
-        livro2 = new Livro("Patterns of Enterprise Application Architecture");
-        livro3 = new Livro("Head First Design Patterns");
+        livro2 = new Livro("Patterns of head Application Architecture");
+        livro3 = new Livro("head First Patterns");
 
         biblioteca.addLivro(livro1);
         biblioteca.addLivro(livro2);
@@ -34,7 +40,11 @@ public class BibliotecaTest {
     @Test
     @DisplayName("Quando um Usuário quer buscar um livro")
     public void buscarLivro(){
-        AssertEquals("Java How to Program", biblioteca.buscarLivro("Java How to Program"));
+        ArrayList<Livro> livros1 = biblioteca.buscarLivro("Java");
+        assertEquals(livros1, new ArrayList<Livro>(List.of(livro1)));
+
+        ArrayList<Livro> livros2 = biblioteca.buscarLivro("head");
+        assertEquals(livros2, new ArrayList<Livro>(List.of(livro2, livro3)));
     }
 
 

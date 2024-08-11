@@ -9,6 +9,7 @@ public class Biblioteca {
 
     public Biblioteca() {
         this.livros = new ArrayList<>();
+        this.usuarios = new ArrayList<>();
     }
 
     public void addLivro(Livro livro){
@@ -19,4 +20,15 @@ public class Biblioteca {
         this.usuarios.add(usuario);
     }
 
+    public ArrayList<Livro> buscarLivro(String titulo) {
+        ArrayList<Livro> resultados = new ArrayList<>();
+
+        // percorrer a lista de livros
+        for(Livro l : livros){
+            if(l.getTitulo().contains(titulo)){
+                resultados.add(l);
+            }
+        }
+        return resultados;
+    }
 }
